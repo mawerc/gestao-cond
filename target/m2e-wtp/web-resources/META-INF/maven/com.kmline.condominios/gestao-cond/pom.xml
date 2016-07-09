@@ -1,0 +1,186 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.kmline.condominios</groupId>
+  <artifactId>gestao-cond</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <dependencies>
+  	
+	  	<dependency>
+	  		<!-- Provided by Tomcat, but needed for compilation -->
+	  		<groupId>javax</groupId>
+	  		<artifactId>javaee-web-api</artifactId>
+	  		<version>7.0</version>
+	  		<scope>provided</scope>
+		</dependency>
+  		<dependency>
+  			<groupId>org.primefaces</groupId>
+  			<artifactId>primefaces</artifactId>
+  			<version>6.0</version>
+  			<scope>compile</scope>
+  		</dependency>
+  		<dependency>
+  			<groupId>org.glassfish</groupId>
+  			<artifactId>javax.faces</artifactId>
+  			<version>2.2.12</version>
+  			<scope>compile</scope>
+  		</dependency>
+  		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>4.1.0.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>4.1.0.RELEASE</version>
+		</dependency>
+    	<!-- Abstração para envio de e-mails -->
+    	<dependency>
+    		<groupId>com.outjected</groupId>
+    		<artifactId>simple-email</artifactId>
+    		<version>0.2.5-SNAPSHOT</version>
+    		<scope>compile</scope>
+    	</dependency>
+    	    	<!-- Requerido para envio de e-mails -->
+    	<dependency>
+    		<groupId>javax.mail</groupId>
+    		<artifactId>mail</artifactId>
+    		<version>1.4.7</version>
+    		<scope>compile</scope>
+    	</dependency>
+  		<!-- CDI Implementation -->
+  		<dependency>
+		  <groupId>javax.enterprise</groupId>
+		  <artifactId>cdi-api</artifactId>
+		  <version>1.2</version>
+		  <scope>provided</scope>
+		</dependency>
+<!-- 		<dependency>
+		    <groupId>org.jboss.weld.servlet</groupId>
+		    <artifactId>weld-servlet-core</artifactId>
+		    <version>3.0.0.Alpha16</version>
+		 	<version>1.1.10.Final</version>
+		</dependency> -->
+		<dependency>
+		  <!--
+		    JBoss/Weld Refrence Implementation for
+		    CDI on a Servlet Container
+		  -->
+		  <groupId>org.jboss.weld.servlet</groupId>
+		  <artifactId>weld-servlet</artifactId>
+		  <version>2.3.4.Final</version>
+		  <scope>runtime</scope>
+		</dependency>
+<!-- 		<dependency>
+    		<groupId>org.jboss.weld</groupId>
+    		<artifactId>weld-core</artifactId>
+    		<version>3.0.0.Alpha6</version>
+		</dependency> -->
+<!--   		Log4j
+  		<dependency>
+  			<groupId>log4j</groupId>
+  			<artifactId>log4j</artifactId>
+  			<version>1.2.17</version>
+  			<scope>compile</scope>
+  		</dependency> -->
+  		<!-- Log4j2 -->
+  		<dependency>
+   			<groupId>org.apache.logging.log4j</groupId>
+    		<artifactId>log4j-api</artifactId>
+    		<version>2.6</version>
+    		<scope>compile</scope>
+  		</dependency>
+  		<dependency>
+    		<groupId>org.apache.logging.log4j</groupId>
+    		<artifactId>log4j-core</artifactId>
+    		<version>2.6</version>
+    		<scope>compile</scope>
+  		</dependency>
+  		<dependency>
+    		<groupId>org.apache.logging.log4j</groupId>
+    		<artifactId>log4j-web</artifactId>
+    		<version>2.6</version>
+    		<scope>runtime</scope>
+  		</dependency>
+  		<!-- Commons Logging  -->
+  		<dependency>
+  			<groupId>commons-logging</groupId>
+  			<artifactId>commons-logging</artifactId>
+  			<version>1.2</version>
+  		</dependency>
+  		<!-- Driver do PostgreSQL -->
+  		<dependency>
+  			<groupId>org.postgresql</groupId>
+  			<artifactId>postgresql</artifactId>
+  			<version>9.4.1208.jre7</version>
+  		</dependency>
+  		  		<!-- Driver do MySQL -->
+  		<dependency>
+  			<groupId>mysql</groupId>
+  			<artifactId>mysql-connector-java</artifactId>
+  			<version>5.1.38</version>
+  		</dependency>
+<!--   		Núcleo do Hibernate -->
+  		 <dependency>
+  			<groupId>org.hibernate</groupId>
+  			<artifactId>hibernate-core</artifactId>
+  			<version>5.2.0.Final</version>
+  			<scope>compile</scope>
+  		</dependency>
+<!--   		Implementação de EntityManager da JPA -->
+  		<dependency>
+  			<groupId>org.hibernate</groupId>
+  			<artifactId>hibernate-entitymanager</artifactId>
+  			<version>5.1.0.Final</version>
+  			<scope>compile</scope>
+  		</dependency>
+  		<dependency>
+		   <groupId>org.hibernate</groupId>
+		   <artifactId>hibernate-validator</artifactId>
+		   <version>5.2.4.Final</version>
+		</dependency>
+  		<!-- http://mvnrepository.com/artifact/org.jboss.spec.javax.transaction/jboss-transaction-api_1.2_spec -->
+		<dependency>
+		    <groupId>org.jboss.spec.javax.transaction</groupId>
+		    <artifactId>jboss-transaction-api_1.2_spec</artifactId>
+		    <version>1.0.1.Final</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.hibernate.javax.persistence</groupId>
+		    <artifactId>hibernate-jpa-2.1-api</artifactId>
+		    <version>1.0.0.Final</version>
+		</dependency>
+  	</dependencies>
+  	<build>
+  		<finalName>gestcondom</finalName>
+  		<plugins>
+  			<plugin>
+  				<groupId>org.apache.maven.plugins</groupId>
+  				<artifactId>maven-compiler-plugin</artifactId>
+  				<version>3.5.1</version>
+  				<configuration>
+  					<source>1.8</source>
+  					<target>1.8</target>
+  					<showDeprecation>true</showDeprecation>
+  					<showWarnings>true</showWarnings>
+  				</configuration>
+  			</plugin>
+  			<plugin>
+            	<groupId>org.apache.maven.plugins</groupId>
+            	<artifactId>maven-war-plugin</artifactId>
+            	<version>2.6</version>
+            	<configuration>
+                <failOnMissingWebXml>false</failOnMissingWebXml>
+            	</configuration>
+        	</plugin>
+  		</plugins>
+  	</build>
+  	<ciManagement>
+  		<url>localhost:8080</url>
+  	</ciManagement>
+  	<scm>
+  		<url>https://github.com/mawerc/gestao-cond.git</url>
+  	</scm>
+  	<url>https://gestao-cond.herokuapp.com/</url>
+</project>
