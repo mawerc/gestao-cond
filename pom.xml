@@ -246,7 +246,7 @@
 	  </profile>
 	</profiles>
   	<ciManagement>
-  		<url>localhost:8080</url>
+  		<url>localhost:8088</url>
   	</ciManagement>
   	<scm>
   		<url>https://github.com/mawerc/gestao-cond.git</url>
